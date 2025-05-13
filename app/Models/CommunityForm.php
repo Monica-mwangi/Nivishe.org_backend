@@ -12,11 +12,10 @@ class CommunityForm extends Model
         'name',
         'email',
         'phone',
-        'address',
-        'skills',
-        'availability',
+        'country',
+        'education',
+        'experience',
         'motivation',
-        'experience'
     ];
    
 }

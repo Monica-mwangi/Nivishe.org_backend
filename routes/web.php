@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VolunteerFormController;
+use App\Http\Controllers\PartnershipFormController;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\CommunityFormController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/volunteer-form', [VolunteerFormController::class, 'store']);
+Route::post('/partnership-form', [PartnershipFormController::class, 'store']);
+Route::post('/contact-form', [ContactFormController::class, 'store']);
+Route::post('/community-form', [CommunityFormController::class, 'store']);
+
