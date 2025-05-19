@@ -10,18 +10,20 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
-class TestMail extends Mailable
+
+class VolunteerFormSubmit extends Mailable
 {
     use Queueable, SerializesModels;
-
-    public $data;
+    public $data; 
 
     /**
      * Create a new message instance.
      */
-    public function __construct( $data )
+    public function __construct($data)
     {
         $this->data = $data;
+       
+        //
     }
 
     /**
@@ -30,8 +32,8 @@ class TestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Mail',
-            from: new Address('test@mail.dev', 'Test Mail'),
+            subject: 'Volunteer Form Submit',
+            from: new Address('info@nivishefoundation.org', 'Nivishe Foundation')
         );
     }
 
@@ -41,8 +43,8 @@ class TestMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'test-mail',
-            with: ['data' => $this->data]
+            view: 'volunteer-form',
+            with: ['data' => $this->data],
         );
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\VolunteerForm;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\TestMail;
+use App\Mail\VolunteerFormSubmit;
 
 class VolunteerFormController extends Controller
 {
@@ -27,7 +27,7 @@ class VolunteerFormController extends Controller
 
         // Send email to admin
         try {
-            Mail::to('mwangimonica123@gmail.com')->send(new TestMail([
+            Mail::to('mwangimonica123@gmail.com')->send(new \App\Mail\VolunteerFormSubmit([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'phone' => $validated['phone'],
