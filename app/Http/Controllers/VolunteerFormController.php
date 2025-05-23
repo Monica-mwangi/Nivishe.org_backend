@@ -27,7 +27,7 @@ class VolunteerFormController extends Controller
 
         // Send email to admin
         try {
-            Mail::to('mwangimonica123@gmail.com')->send(new \App\Mail\VolunteerFormSubmit([
+            Mail::to('info@nivishefoundation.org')->send(new \App\Mail\VolunteerFormSubmit([
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'phone' => $validated['phone'],

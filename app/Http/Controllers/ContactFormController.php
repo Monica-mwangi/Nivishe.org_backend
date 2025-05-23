@@ -28,7 +28,7 @@ public function store(Request $request)
         $contact = ContactForm::create($validated); 
 
         // 3. Send notification email 
-        Mail::to('mwangimonica123@gmail.com')->send(new ContactFormSubmitted($validated));
+        Mail::to('info@nivishefoundation.org')->send(new ContactFormSubmitted($validated));
 
         // 4. Return JSON response
         return response()->json(['message' => 'Success'], 201);

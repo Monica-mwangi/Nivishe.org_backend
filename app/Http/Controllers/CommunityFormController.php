@@ -30,7 +30,7 @@ class CommunityFormController extends Controller
     
         try {
             // Send email to admin after successful form submission
-            Mail::to('mwangimonica123@gmail.com')->send(new CommunityFormSubmitted($form));
+            Mail::to('info@nivishefoundation.org')->send(new CommunityFormSubmitted($form));
         } catch (\Exception $e) {
             // Handle any error during email sending
             return response()->json([

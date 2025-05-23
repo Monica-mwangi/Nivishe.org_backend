@@ -42,7 +42,7 @@ class PartnershipFormController extends Controller
 
     // Send email
     try {
-        Mail::to('mwangimonica123@gmail.com')->send(new PartnershipMail($validated));
+        Mail::to('info@nivishefoundation.org')->send(new PartnershipMail($validated));
     } catch (\Exception $e) {
         return response()->json([
             'message' => 'Form saved, but email failed to send.',
